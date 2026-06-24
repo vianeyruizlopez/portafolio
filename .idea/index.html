@@ -1,0 +1,744 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gisela Vianey Ruiz Lopez | Portfolio 🚀</title>
+    <style>
+        :root {
+            --bg-principal: #0b0f19;
+            --bg-tarjeta: #111625;
+            --bg-item: #1e2640;
+            --texto-principal: #f8fafc;
+            --texto-secundario: #94a3b8;
+            --glow-verde: #10b981;
+            --glow-amarillo: #f59e0b;
+            --glow-cyan: #0ea5e9;
+            --borde: rgba(255, 255, 255, 0.04);
+
+            /* Colores de niveles exactos a la referencia */
+            --bg-avanzado: rgba(16, 185, 129, 0.15);
+            --txt-avanzado: #10b981;
+            --bg-intermedio: rgba(245, 158, 11, 0.15);
+            --txt-intermedio: #f59e0b;
+            --bg-basico: rgba(249, 115, 22, 0.15);
+            --txt-basico: #f97316;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-principal);
+            color: var(--texto-principal);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        header {
+            position: sticky;
+            top: 0;
+            background-color: rgba(11, 15, 25, 0.8);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            z-index: 100;
+        }
+
+        .nav-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.25rem 1.5rem;
+        }
+
+        .logo {
+            font-weight: 700;
+            font-size: 1.25rem;
+            color: var(--texto-principal);
+            text-decoration: none;
+            letter-spacing: -0.05em;
+        }
+
+        .logo span {
+            background: linear-gradient(to right, var(--glow-verde), var(--glow-amarillo));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--texto-secundario);
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--glow-verde);
+        }
+
+        section {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 5rem 1.5rem;
+        }
+
+        /* Hero Section */
+        .hero {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            min-height: 70vh;
+        }
+
+        .badge-status {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background-color: rgba(16, 185, 129, 0.1);
+            color: #34d399;
+            padding: 0.5rem 1rem;
+            border-radius: 9999px;
+            font-size: 0.875rem;
+            font-weight: 600;
+            width: fit-content;
+            margin-bottom: 1.5rem;
+            border: 1px solid rgba(16, 185, 129, 0.3);
+        }
+
+        .badge-pulse {
+            width: 8px;
+            height: 8px;
+            background-color: var(--glow-verde);
+            border-radius: 50%;
+            display: inline-block;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 1rem;
+            letter-spacing: -0.02em;
+        }
+
+        .hero h1 span {
+            background: linear-gradient(to right, var(--glow-verde), var(--glow-amarillo), var(--glow-cyan));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero h2 {
+            font-size: 1.75rem;
+            color: var(--texto-secundario);
+            font-weight: 500;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero p {
+            font-size: 1.125rem;
+            color: var(--texto-secundario);
+            max-width: 700px;
+            margin-bottom: 2.5rem;
+        }
+
+        .btn-group {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--glow-verde), var(--glow-cyan));
+            color: #000;
+            box-shadow: 0 4px 20px rgba(16, 185, 129, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 4px 25px rgba(16, 185, 129, 0.5);
+        }
+
+        .btn-secondary {
+            background-color: rgba(255, 255, 255, 0.05);
+            color: var(--texto-principal);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .btn-secondary:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+            transform: translateY(-3px);
+        }
+
+        .section-title {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 3rem;
+            position: relative;
+            padding-left: 1rem;
+            border-left: 4px solid var(--glow-amarillo);
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .skill-card-v2 {
+            background-color: var(--bg-tarjeta);
+            border: 1px solid var(--borde);
+            border-radius: 16px;
+            padding: 1.75rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1.2rem;
+        }
+
+        .card-tag {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: var(--glow-amarillo);
+            letter-spacing: -0.01em;
+        }
+
+        .badges-container-v2 {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 0.65rem;
+        }
+
+        @media (max-width: 400px) {
+            .badges-container-v2 {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .badge-item-v2 {
+            background-color: var(--bg-item);
+            border-radius: 8px;
+            padding: 0.6rem 0.8rem;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 0.2rem;
+            border: 1px solid transparent;
+            transition: transform 0.2s ease, border-color 0.2s ease;
+            user-select: none;
+        }
+
+        .badge-item-v2:hover {
+            transform: translateY(-2px);
+            border-color: rgba(255, 255, 255, 0.08);
+        }
+
+        .skill-name {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--texto-principal);
+        }
+
+        .pill-lvl {
+            font-size: 0.7rem;
+            font-weight: 700;
+            padding: 0.1rem 0.5rem;
+            border-radius: 20px;
+            display: inline-block;
+        }
+
+        .lvl-avanzado {
+            background-color: var(--bg-avanzado);
+            color: var(--txt-avanzado);
+        }
+
+        .lvl-intermedio {
+            background-color: var(--bg-intermedio);
+            color: var(--txt-intermedio);
+        }
+
+        .lvl-basico {
+            background-color: var(--bg-basico);
+            color: var(--txt-basico);
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 2rem;
+        }
+
+        .project-card {
+            background-color: rgba(30, 41, 59, 0.4);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 16px;
+            padding: 2rem;
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .project-card:hover {
+            transform: translateY(-6px);
+            border-color: rgba(16, 185, 129, 0.4);
+            box-shadow: 0 0 20px rgba(16, 185, 129, 0.15);
+            background-color: rgba(30, 41, 59, 0.7);
+        }
+
+        .project-info h3 {
+            font-size: 1.35rem;
+            margin-bottom: 0.75rem;
+            color: var(--texto-principal);
+        }
+
+        .project-info p {
+            color: var(--texto-secundario);
+            font-size: 0.95rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .project-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .tech-tag {
+            background-color: rgba(14, 165, 233, 0.1);
+            color: var(--glow-cyan);
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            border: 1px solid rgba(14, 165, 233, 0.2);
+        }
+
+        .project-links-group {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .project-links-group .btn {
+            flex: 1;
+            text-align: center;
+            font-size: 0.85rem;
+            padding: 0.6rem;
+        }
+
+        /* Certificados */
+        .cert-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+            gap: 1.5rem;
+        }
+        @media (max-width: 600px) {
+            .cert-grid { grid-template-columns: 1fr; }
+        }
+
+        .cert-card {
+            background-color: rgba(30, 41, 59, 0.4);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 12px;
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            gap: 1.25rem;
+        }
+
+        .cert-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .cert-icon {
+            font-size: 2rem;
+        }
+
+        .cert-info h4 {
+            color: var(--texto-principal);
+            font-size: 1.1rem;
+        }
+
+        .cert-info p {
+            color: var(--texto-secundario);
+            font-size: 0.9rem;
+        }
+
+        /* Contacto */
+        .contact {
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .contact p {
+            color: var(--texto-secundario);
+            margin-bottom: 2rem;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.2rem;
+            list-style: none;
+            flex-wrap: wrap;
+        }
+
+        .social-links a {
+            background-color: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            text-decoration: none;
+            color: var(--texto-principal);
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            background-color: rgba(255, 255, 255, 0.08);
+            border-color: var(--glow-amarillo);
+            color: var(--glow-amarillo);
+            box-shadow: 0 0 15px rgba(245, 158, 11, 0.3);
+            transform: translateY(-2px);
+        }
+
+        footer {
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            padding: 2rem 1.5rem;
+            text-align: center;
+            color: var(--texto-secundario);
+            font-size: 0.9rem;
+            margin-top: 5rem;
+            background-color: rgba(11, 15, 25, 0.9);
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.5rem; }
+            .nav-links { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <nav class="nav-container">
+        <a href="#" class="logo">👩‍💻 Gisela<span>Vianey</span></a>
+        <ul class="nav-links">
+            <li><a href="#about">✨ Sobre mí</a></li>
+            <li><a href="#skills">🛠️ Habilidades</a></li>
+            <li><a href="#projects">📁 Proyectos</a></li>
+            <li><a href="#certifications">📜 Certificados</a></li>
+            <li><a href="#contact">💬 Contacto</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+    <section class="hero" id="about">
+        <h1>Hola, soy <span>Gisela Vianey Ruiz Lopez</span> </h1>
+        <h2>Backend Developer & UI Mobile Developer (Android) 📱⚡</h2>
+        <p>
+            Estudiante de Ingeniería en Tecnologías de la Información e Innovación Digital en la Universidad Politécnica de Chiapas. Me especializo en estructurar código desacoplado, mantenible y escalable mediante <strong>Arquitecturas Limpias </strong> y principios <strong>SOLID</strong>. Desarrollo aplicaciones nativas fluidas y arquitecturas backend distribuidas.
+        </p>
+        <div class="btn-group">
+            <a href="#projects" class="btn btn-primary">Explorar Proyectos</a>
+            <a href="#contact" class="btn btn-secondary"> ¡Hablamos!</a>
+        </div>
+    </section>
+
+    <section id="skills">
+        <h2 class="section-title">🛠️ Habilidades Técnicas y Sociales</h2>
+        <div class="skills-grid">
+
+            <div class="skill-card-v2">
+                <span class="card-tag">Arquitectura & Buenas Prácticas</span>
+                <div class="badges-container-v2">
+                    <div class="badge-item-v2">
+                        <span class="skill-name">SOLID</span>
+                        <span class="pill-lvl lvl-basico">Básico</span>
+                    </div>
+                    <div class="badge-item-v2">
+                        <span class="skill-name">Hexagonal</span>
+                        <span class="pill-lvl lvl-basico">Básico</span>
+                    </div>
+                    <div class="badge-item-v2">
+                        <span class="skill-name">Clean Arch</span>
+                        <span class="pill-lvl lvl-basico">Básico</span>
+                    </div>
+                    <div class="badge-item-v2">
+                        <span class="skill-name">MVVM / MVC</span>
+                        <span class="pill-lvl lvl-basico">Básico</span>
+                    </div>
+                    <div class="badge-item-v2">
+                        <span class="skill-name">Atomic Design</span>
+                        <span class="pill-lvl lvl-basico">Básico</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="skill-card-v2">
+                <span class="card-tag">Backend Development</span>
+                <div class="badges-container-v2">
+                    <div class="badge-item-v2">
+                        <span class="skill-name">Kotlin (Ktor)</span>
+                        <span class="pill-lvl lvl-intermedio">Intermedio</span>
+                    </div>
+                    <div class="badge-item-v2">
+                        <span class="skill-name">Java (Javalin)</span>
+                        <span class="pill-lvl lvl-intermedio">Intermedio</span>
+                    </div>
+                    <div class="badge-item-v2">
+                        <span class="skill-name">API REST</span>
+                        <span class="pill-lvl lvl-basico">Básico</span>
+                    </div>
+                    <div class="badge-item-v2">
+                        <span class="skill-name">Endpoints</span>
+                        <span class="pill-lvl lvl-basico">Básico</span>
+                    </div>
+                    <div class="badge-item-v2">
+                        <span class="skill-name">C++</span>
+                        <span class="pill-lvl lvl-basico">Básico</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="skill-card-v2">
+                <span class="card-tag">Mobile UI (Nativo)</span>
+                <div class="badges-container-v2">
+                    <div class="badge-item-v2">
+                        <span class="skill-name">Kotlin Nativo</span>
+                        <span class="pill-lvl lvl-intermedio">Intermedio</span>
+                    </div>
+                    <div class="badge-item-v2">
+                        <span class="skill-name">Jetpack Compose</span>
+                        <span class="pill-lvl lvl-basico">Básico</span>
+                    </div>
+                    <div class="badge-item-v2">
+                        <span class="skill-name">Room DB</span>
+                        <span class="pill-lvl lvl-basico">Básico</span>
+                    </div>
+                    <div class="badge-item-v2">
+                        <span class="skill-name">Android Studio</span>
+                        <span class="pill-lvl lvl-basico">Básico</span>
+                    </div>
+                    <div class="badge-item-v2">
+                        <span class="skill-name">GPS & Hardware</span>
+                        <span class="pill-lvl lvl-basico">Básico</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="skill-card-v2">
+                <span class="card-tag">Web Frontend</span>
+                <div class="badges-container-v2">
+                    <div class="badge-item-v2">
+                        <span class="skill-name">HTML5</span>
+                        <span class="pill-lvl lvl-basico">Básico</span>
+                    </div>
+                    <div class="badge-item-v2">
+                        <span class="skill-name">CSS3</span>
+                        <span class="pill-lvl lvl-basico">Básico</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="skill-card-v2">
+                <span class="card-tag">Infraestructura & Data</span>
+                <div class="badges-container-v2">
+                    <div class="badge-item-v2">
+                        <span class="skill-name">PostgreSQL</span>
+                        <span class="pill-lvl lvl-intermedio">Intermedio</span>
+                    </div>
+                    <div class="badge-item-v2">
+                        <span class="skill-name">Git / GitHub</span>
+                        <span class="pill-lvl lvl-intermedio">Intermedio</span>
+                    </div>
+                    <div class="badge-item-v2">
+                        <span class="skill-name">AWS EC2</span>
+                        <span class="pill-lvl lvl-intermedio">Intermedio</span>
+                    </div>
+                    <div class="badge-item-v2">
+                        <span class="skill-name">Linux Terminal</span>
+                        <span class="pill-lvl lvl-intermedio">Intermedio</span>
+                    </div>
+                    <div class="badge-item-v2">
+                        <span class="skill-name">MobaXterm</span>
+                        <span class="pill-lvl lvl-intermedio">Intermedio</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="skill-card-v2">
+                <span class="card-tag">Diseño UI/UX</span>
+                <div class="badges-container-v2">
+                    <div class="badge-item-v2">
+                        <span class="skill-name">Figma</span>
+                        <span class="pill-lvl lvl-intermedio">Intermedio</span>
+                    </div>
+                    <div class="badge-item-v2">
+                        <span class="skill-name">Maquetado</span>
+                        <span class="pill-lvl lvl-intermedio">Intermedio</span>
+                    </div>
+                    <div class="badge-item-v2">
+                        <span class="skill-name">Normas UI/UX</span>
+                        <span class="pill-lvl lvl-basico">Básico</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="skill-card-v2">
+                <span class="card-tag">Habilidades Sociales</span>
+                <div class="badges-container-v2">
+                    <div class="badge-item-v2" style="justify-content: center; min-height: 45px;">
+                        <span class="skill-name">Trabajo en Equipo</span>
+                    </div>
+                    <div class="badge-item-v2" style="justify-content: center; min-height: 45px;">
+                        <span class="skill-name">Comunicación</span>
+                    </div>
+                    <div class="badge-item-v2" style="justify-content: center; min-height: 45px;">
+                        <span class="skill-name">Platicar e Idear</span>
+                    </div>
+                    <div class="badge-item-v2" style="justify-content: center; min-height: 45px;">
+                        <span class="skill-name">Pensamiento Crítico</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="projects">
+        <h2 class="section-title">📁 Proyectos de Ingeniería</h2>
+        <div class="projects-grid">
+
+            <div class="project-card">
+                <div class="project-info">
+                    <h3>SARC ⚙️ (Backend)</h3>
+                    <p>Infraestructura y API REST construida bajo los principios de la Arquitectura Hexagonal para el Sistema de Atención a Reportes Ciudadanos. Centraliza las reglas de negocio y expone endpoints desacoplados para la gestión segura de reportes urbanos.</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">Kotlin</span>
+                        <span class="tech-tag">Ktor Framework</span>
+                        <span class="tech-tag">Hexagonal Architecture</span>
+                        <span class="tech-tag">PostgreSQL</span>
+                    </div>
+                </div>
+                <div class="project-links-group">
+                    <a href="https://github.com/vianeyruizlopez/SARC" class="btn btn-secondary" target="_blank">💻 Ver Backend</a>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-info">
+                    <h3>SARC 📱 (Mobile UI)</h3>
+                    <p>Aplicación móvil nativa para el reporte ciudadano en tiempo real. Diseñada con el patrón arquitectónico MVVM, integrando servicios de hardware para la captura de evidencias y geolocalización.</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">Kotlin Nativo</span>
+                        <span class="tech-tag">Jetpack Compose</span>
+                        <span class="tech-tag">MVVM</span>
+                        <span class="tech-tag">GPS & Cámara</span>
+                    </div>
+                </div>
+                <div class="project-links-group">
+                    <a href="https://github.com/vianeyruizlopez/Moviles-SARC2" class="btn btn-secondary" target="_blank">📱 Ver Mobile App</a>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-info">
+                    <h3>ErgoHabit 🧠 (Backend API)</h3>
+                    <p>ErgoHabit Backend es una API REST robusta, escalable y de alto rendimiento diseñada bajo el paradigma de Arquitectura Hexagonal (Ports and Adapters) y guiada estrictamente por los principios SOLID y Clean Architecture. Su propósito principal es servir como el motor de inteligencia y persistencia para la aplicación móvil de gestión de hábitos y monitoreo de ergonomía cervical.</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">Kotlin</span>
+                        <span class="tech-tag">Ktor</span>
+                        <span class="tech-tag">PostgreSQL</span>
+                        <span class="tech-tag">Hexagonal Architecture</span>
+                    </div>
+                </div>
+                <div class="project-links-group">
+                    <a href="https://github.com/vianeyruizlopez/ErgoHabit" class="btn btn-secondary" target="_blank">💻 Ver Backend</a>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-info">
+                    <h3>AgroData API 🌾</h3>
+                    <p>API modular diseñada para la gestión y administración de cultivos agrícolas y talleres. Enfocada en la correcta estructuración de las responsabilidades, modularidad y la estandarización estricta de contratos de endpoints.</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">Java</span>
+                        <span class="tech-tag">Javalin Framework</span>
+                        <span class="tech-tag">MVC</span>
+                        <span class="tech-tag">SQL</span>
+                    </div>
+                </div>
+                <div class="project-links-group">
+                    <a href="https://github.com/vianeyruizlopez/API-agroData" class="btn btn-secondary" target="_blank">💻 Ver API Code</a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="certifications">
+        <h2 class="section-title">📜 Certificaciones & Formación</h2>
+        <div class="cert-grid">
+            <div class="cert-card">
+                <div class="cert-header">
+                    <div class="cert-icon">☁️</div>
+                    <div class="cert-info">
+                        <h4>Certificaciones Oficiales de AWS</h4>
+                        <p>Conocimiento en infraestructura cloud de Amazon Web Services, cómputo en EC2 y despliegues seguros.</p>
+                    </div>
+                </div>
+                <a href="https://www.credly.com/go/pyhLm0N2" class="btn btn-secondary" target="_blank" style="text-align: center;">🛡️ Verificar Credencial</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <h2 class="section-title" style="border: none; padding: 0;">🤝 Contacto </h2>
+        <ul class="social-links">
+            <li><a href="https://www.linkedin.com/in/gisela-vianey-ruiz-l%C3%B3pez-29aa893a3" target="_blank">💼 LinkedIn</a></li>
+            <li><a href="https://github.com/vianeyruizlopez" target="_blank">🐙 GitHub</a></li>
+            <li><a href="https://www.instagram.com/vianeyruizlopez103/" target="_blank">📸 Instagram</a></li>
+        </ul>
+    </section>
+</main>
+
+<footer>
+    <p>© 2026 Gisela Vianey Ruiz Lopez. Desarrollado con 💚, 💛 y Arquitectura Limpia.</p>
+</footer>
+
+</body>
+</html>
